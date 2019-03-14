@@ -1,1 +1,60 @@
-<a href="/newticket" class="btn btn-info" role="button">New Ticket</a>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Tickets <button type="button" class="btn btn-primary" [routerLink]="'/newticket'" role="button">+</button></h2>
+        <ngb-accordion #acc="ngbAccordion">
+            <ngb-panel [disabled]="!(open.length)">
+                <ng-template ngbPanelTitle>
+                    <span>Open ({{open.length}})</span>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                    <div *ngFor="let ticket of open">
+                        {{ticket.id}}
+                    </div>
+                </ng-template>
+            </ngb-panel>
+            <ngb-panel [disabled]="!(closed.length)">
+                <ng-template ngbPanelTitle>
+                    <span>Closed ({{closed.length}})</span>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                    <div *ngFor="let ticket of closed">
+                        {{ticket.id}}
+                    </div>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <button type="button" class="btn btn-secondary" (click)="editing = true">Edit</button>
+            <button type="button" class="btn btn-secondary" [routerLink]="'/setup'" >Schedule Appointment for User</button>
+        </div>
+        <form>
+            <div class="form-group row">
+                <label for="device" class="col-sm-2 col-form-label">Device</label>
+                <div class="col-sm-10">
+                    <input type="text" id="device" [readonly]="!editing" class="form-control" placeholder="Galaxy Note 12" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="device" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea type="text" id="device" [readonly]="!editing" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="device" class="col-sm-2 col-form-label">Previous Attempts</label>
+                <div class="col-sm-10">
+                    <textarea type="text" id="device" [readonly]="!editing" class="form-control"></textarea>
+                </div>
+            </div>
+            <button *ngIf="editing" type="button" class="btn btn-primary" (click)="editing = false">Save Changes</button>
+            <div class="form-group row">
+                <label for="device" class="col-sm-2 col-form-label">Solution</label>
+                <div class="col-sm-10">
+                    <textarea type="text" id="device" class="form-control"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

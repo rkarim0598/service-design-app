@@ -12,8 +12,9 @@ const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'norecord', component: NouserComponent },
   { path: 'createrecord', component: CreaterecordComponent },
-  { path: 'viewtickets', component: ViewticketsComponent },
   { path: 'setup', component: SetupApptComponent },
+  { path: 'tickets', component: ViewticketsComponent },
+  { path: 'viewtickets', redirectTo: 'tickets' },
   { path: 'confirmed', component: ConfirmApptComponent },
   { path: 'newticket', component: NewticketComponent },
 ];

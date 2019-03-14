@@ -1,9 +1,10 @@
-<html>
-  <body>
-
-    <h4> Record Locator </h4>
-    <input type="text" placeholder="Phone Number">
-    <a href="/norecord" class="btn btn-info" role="button">Search</a>
-
-  </body>
-</html>
+<div id="center" class="d-flex justify-content-center">
+  <div class="col-md-5">
+    <h4 class="d-flex justify-content-center">Record Locator</h4>
+    <br>
+    <div class="row">
+      <input type="text" class="form-control col-md-9" placeholder="Phone Number">
+      <button class="btn btn-primary col-md-3" [routerLink]="'/norecord'" role="button">Search</button>
+    </div>
+  </div>
+</div>
