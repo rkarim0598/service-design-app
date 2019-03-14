@@ -14,6 +14,7 @@ export class ViewticketsComponent implements OnInit {
   ticket: Ticket;
   description: string;
   previousAttempts: string;
+  submitted = false;
 
   constructor(private route: ActivatedRoute, private localStore: LocalStoreService) { }
 
@@ -24,7 +25,9 @@ export class ViewticketsComponent implements OnInit {
     this.description = this.ticket.description;
     this.previousAttempts = this.ticket.previousAttempts;
   }
-
+  submit() {
+    this.submitted = true;
+  }
   log = (x) => console.log(x);
 
 }

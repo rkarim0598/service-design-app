@@ -34,7 +34,13 @@
                     <textarea type="text" id="device" class="form-control"></textarea>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" (click)="log(device)">Mark as Closed</button>
+            <button type="button" (click)="submit()" class="btn btn-primary">Mark as Closed</button>
+            <!-- <button type="button" class="btn btn-primary" (click)="log(device)"></button> -->
+            <p *ngIf="submitted==true; else notYet">
+                <ngb-alert type="success" [dismissible]="false">
+                    <strong>Ticket Closed!</strong> The user was sent a confirmation email!
+                </ngb-alert>
+            </p>
         </form>
     </div>
 </div>
