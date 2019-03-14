@@ -1,8 +1,8 @@
-<html>
-
-<body>
-
-  <div class="container">
+<div class="row">
+  <div class="col-md-4">
+    <app-ticket-list></app-ticket-list>
+  </div>
+  <div class="col-md-8">
     <h3>Issue Information</h3>
     <div class="form">
       <form class="form-horizontal" action="/action_page.php">
@@ -12,29 +12,29 @@
             <input type="text" class="form-control" id="device" placeholder="What's the device?" name="device">
           </div>
         </div>
-
+        
         <div class="form-group">
           <label class="control-label col-sm-2" for="issue">Issue Description:</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="issue" placeholder="What's the issue?" name="description">
           </div>
         </div>
-
+        
         <div class="form-group">
           <label class="control-label col-sm-2" for="prevattemp">Previous Attempts:</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="prevattemp" placeholder="What has customer tried?" name="prevattemp">
           </div>
         </div>
-
-
+        
+        
         <div class="form-group">
           <label class="control-label col-sm-2" for="agentid">Agent ID:</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="agentid" placeholder="What's your ID?" name="agentid">
           </div>
         </div>
-
+        
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <a href="/viewtickets" class="btn btn-info" role="button">Create Ticket</a>
@@ -43,7 +43,4 @@
       </form>
     </div>
   </div>
-
-</body>
-
-</html>
+</div>

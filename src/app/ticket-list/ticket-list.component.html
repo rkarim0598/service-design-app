@@ -1,0 +1,23 @@
+<h2>Tickets <span *ngIf="user">for {{user.name}} </span> <button type="button" class="btn btn-primary" [routerLink]="'/newticket/'+id" role="button">+</button></h2>
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel [disabled]="!(open.length)">
+    <ng-template ngbPanelTitle>
+      <span>Open ({{open.length}})</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div *ngFor="let ticket of open">
+        {{ticket.id}}
+      </div>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel [disabled]="!(closed.length)">
+    <ng-template ngbPanelTitle>
+      <span>Closed ({{closed.length}})</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div *ngFor="let ticket of closed">
+        {{ticket.id}}
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

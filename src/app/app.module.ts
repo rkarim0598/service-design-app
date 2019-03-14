@@ -13,6 +13,7 @@ import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
 import { NewticketComponent } from './newticket/newticket.component';
 import { SetupApptComponent } from './setup-appt/setup-appt.component';
 import { FormsModule } from '@angular/forms';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     ViewticketsComponent,
     ConfirmApptComponent,
     NewticketComponent,
-    SetupApptComponent
+    SetupApptComponent,
+    TicketListComponent
   ],
   imports: [
     BrowserModule,

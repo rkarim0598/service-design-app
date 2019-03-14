@@ -7,13 +7,14 @@ import { Ticket } from '../models/ticket';
   styleUrls: ['./viewtickets.component.scss']
 })
 export class ViewticketsComponent implements OnInit {
-  open: Ticket[] = [];
-  closed: Ticket[] = [];
   editing = false;
+  device: string;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  log = (x) => console.log(x);
 
 }
