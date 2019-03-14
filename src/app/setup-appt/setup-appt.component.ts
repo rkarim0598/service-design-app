@@ -13,7 +13,7 @@ export class SetupApptComponent implements OnInit {
       "345 Hamilton Ave, Palo Alto, CA",
       "389 Main St, San Carlos"
   ]
-  zip="94020";
+  zip="";
 
   constructor() { }
 
