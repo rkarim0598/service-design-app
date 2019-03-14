@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { NouserComponent } from './nouser/nouser.component';
+import { CreaterecordComponent } from './createrecord/createrecord.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    NouserComponent
+    NouserComponent,
+    CreaterecordComponent
   ],
   imports: [
     BrowserModule,
