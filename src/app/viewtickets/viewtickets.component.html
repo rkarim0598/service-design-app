@@ -4,7 +4,7 @@
     </div>
     <div *ngIf="ticket; else none" class="col-md-8">
         <div class="row">
-            <button type="button" class="btn btn-secondary" (click)="editing = true">Edit</button>&nbsp;
+            <button type="button" class="btn btn-secondary" (click)="editing = true">Update Information</button>&nbsp;
             <button type="button" class="btn btn-secondary" [routerLink]="'/setup'" >Schedule Appointment for User</button>
         </div>
         <br>
@@ -29,9 +29,9 @@
             </div>
             <button *ngIf="editing" type="button" class="btn btn-secondary" (click)="editing = false">Save Changes</button>
             <div class="form-group row">
-                <label for="device" class="col-sm-3 col-form-label">Solution</label>
+                <label for="solution" class="col-sm-3 col-form-label">Solution</label>
                 <div class="col-sm-9">
-                    <textarea type="text" id="device" class="form-control"></textarea>
+                    <textarea type="text" name="solution" [(ngModel)]="solution" class="form-control"></textarea>
                 </div>
             </div>
             <button type="button" (click)="close()" class="btn btn-primary">Mark as Closed</button>
