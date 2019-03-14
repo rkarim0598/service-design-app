@@ -20,6 +20,9 @@ export class ViewticketsComponent implements OnInit {
   ngOnInit() {
     const ticketId = this.route.snapshot.paramMap.get('id');
     this.ticket = this.localStore.getTicketById(ticketId);
+    if (!this.ticket) {
+      return;
+    }
     this.device = this.ticket.device;
     this.description = this.ticket.description;
     this.previousAttempts = this.ticket.previousAttempts;

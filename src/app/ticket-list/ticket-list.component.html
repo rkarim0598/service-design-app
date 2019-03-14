@@ -1,4 +1,4 @@
-<h2>Tickets <span *ngIf="user">for {{user.name}} </span> <button type="button" class="btn btn-primary" [routerLink]="'/newticket/'+id" role="button">+</button></h2>
+<h2>Tickets <span *ngIf="user">for {{user.name}} </span> <button type="button" class="btn btn-primary" [routerLink]="'/newticket/'" role="button">+</button></h2>
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel [disabled]="!(open.length)">
     <ng-template ngbPanelTitle>
