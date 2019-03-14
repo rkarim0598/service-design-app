@@ -11,6 +11,8 @@ import { CreaterecordComponent } from './createrecord/createrecord.component';
 import { ViewticketsComponent } from './viewtickets/viewtickets.component';
 import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
 import { NewticketComponent } from './newticket/newticket.component';
+import { SetupApptComponent } from './setup-appt/setup-appt.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { NewticketComponent } from './newticket/newticket.component';
     CreaterecordComponent,
     ViewticketsComponent,
     ConfirmApptComponent,
-    NewticketComponent
+    NewticketComponent,
+    SetupApptComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule.forRoot()
   ],
   providers: [],

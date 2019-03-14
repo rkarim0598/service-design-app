@@ -6,13 +6,14 @@ import { CreaterecordComponent } from './createrecord/createrecord.component';
 import { ViewticketsComponent } from './viewtickets/viewtickets.component';
 import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
 import { NewticketComponent } from './newticket/newticket.component';
-
+import { SetupApptComponent } from './setup-appt/setup-appt.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'norecord', component: NouserComponent },
   { path: 'createrecord', component: CreaterecordComponent },
   { path: 'viewtickets', component: ViewticketsComponent },
+  { path: 'setup', component: SetupApptComponent },
   { path: 'confirmed', component: ConfirmApptComponent },
   { path: 'newticket', component: NewticketComponent },
 ];
