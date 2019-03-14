@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AppRoutingModule } from '../app-routing.module';
+import { Router } from '@angular/router';
+import { LocalStoreService } from '../local-store.service';
+import { TicketStatus } from '../models/ticket';
 
 @Component({
   selector: 'app-newticket',
@@ -6,10 +10,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newticket.component.scss']
 })
 export class NewticketComponent implements OnInit {
+  device: string;
+  description: string;
+  prevattemp: string;
+  agentid: number;
 
-  constructor() { }
+  constructor(private router: Router, private localStore: LocalStoreService) { }
 
   ngOnInit() {
+  }
+
+  submit() {
+    this.localStore.saveTicket({
+      device: this.device,
+      description: this.description,
+      previousAttempts: this.prevattemp,
+      agentId: this.agentid,
+      status: TicketStatus.OPENED
+    });
+    const id = 0;
+    this.router.navigateByUrl('/ticket/' + id);
   }
 
 }

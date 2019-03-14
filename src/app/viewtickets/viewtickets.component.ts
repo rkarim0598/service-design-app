@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../models/ticket';
+import { LocalStoreService } from '../local-store.service';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-viewtickets',
@@ -9,10 +11,18 @@ import { Ticket } from '../models/ticket';
 export class ViewticketsComponent implements OnInit {
   editing = false;
   device: string;
+  ticket: Ticket;
+  description: string;
+  previousAttempts: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private localStore: LocalStoreService) { }
 
   ngOnInit() {
+    const ticketId = this.route.snapshot.paramMap.get('id');
+    this.ticket = this.localStore.getTicketById(ticketId);
+    this.device = this.ticket.device;
+    this.description = this.ticket.description;
+    this.previousAttempts = this.ticket.previousAttempts;
   }
 
   log = (x) => console.log(x);

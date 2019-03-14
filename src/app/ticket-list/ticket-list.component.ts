@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../models/ticket';
 import { ActivatedRoute } from '@angular/router';
+import { LocalStoreService } from '../local-store.service';
 
 @Component({
   selector: 'app-ticket-list',
@@ -13,13 +14,10 @@ export class TicketListComponent implements OnInit {
   user = null;
   id = null;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private localStore: LocalStoreService) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id) {
-      this.user = {name: 'Dierre'};
-    }
+    this.user = this.localStore.getCurrentUser();
   }
 
 }
