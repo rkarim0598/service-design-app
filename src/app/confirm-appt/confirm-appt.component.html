@@ -5,8 +5,8 @@
     <h3>Details</h3>
     <ul class="list-group list-group-horizontal mx-auto justify-content-center">
       <li class="list-group-item"><b>Store</b>: {{ location }}</li>
-      <li class="list-group-item"><b>Date</b>: 3/14/19</li>
-      <li class="list-group-item"><b>Time</b>: 12:30 PM</li>
+      <li class="list-group-item"><b>Date</b>: {{ date }}</li>
+      <li class="list-group-item"><b>Time</b>: {{ time }}</li>
     </ul>
     <h3>Customer Contact Information</h3>
     <div class="input-group mb-3 col-md-4 mx-auto justify-content-center">
@@ -15,7 +15,11 @@
       </div>
       <input type="text" class="form-control" aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-default">
-      <button type="button" class="btn btn-success lil">Send Confirmation</button>
+      <button type="button" (click)="submit()" class="btn btn-success lil">Send Confirmation</button>
     </div>
+    <p *ngIf="submitted==true; else notYet">
+      <ngb-alert type="success" [dismissible]="true">
+        <strong>Success!</strong> Yay! The user was sent a confirmation email!
+      </ngb-alert>
+    </p>
   </div>
-</div>
