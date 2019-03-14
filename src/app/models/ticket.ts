@@ -1,5 +1,5 @@
 export class Ticket {
-    id?: number;
+    id?: string;
     status: TicketStatus = TicketStatus.OPENED;
     device: string;
     description: string;

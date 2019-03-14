@@ -5,34 +5,42 @@ import { Ticket } from './models/ticket';
   providedIn: 'root'
 })
 export class LocalStoreService {
-  ticketId = 0;
-  userId = 0;
+  ticketId = 4589;
+  userId = 2348;
 
   saveTicket(ticket: Ticket): any {
-    ticket.id = this.ticketId;
+    ticket.id = '' + this.ticketId;
     this.ticketId ++;
-    throw new Error('Method not implemented.');
+    localStorage.setItem('ticket', '' + this.ticketId);
+    console.log('Set ticket to ' + this.ticketId);
   }
 
   getTicketById(id: number) {
-    throw new Error('Method not implemented.');
-    return {};
+    let ticket = localStorage.getItem('ticket');
+    console.log('fetched ticket id');
+    return ticket;
   }
 
   saveUser(user: any) {
-    throw new Error('Method not implemented.');
+    localStorage.setItem('user', user);
+    console.log('set user to ' + user);
   }
 
   getUserById(id: number){
-    throw new Error('Method not implemented.');
+    let user = localStorage.getItem('user');
+    console.log('fetched user');
+    return user;
   }
 
   getCurrentUser() {
-    throw new Error('Method not implemented.');
+    let user = localStorage.getItem('user');
+    console.log('fetched current user');
+    return user;
   }
 
-  setCurrentUser() {
-    throw new Error('Method not implemented.');
+  setCurrentUser(user) {
+    localStorage.setItem('user', user);
+    console.log('Set current user to ' + user);
   }
 
   getAgentId = () => 10542;
