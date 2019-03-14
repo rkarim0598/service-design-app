@@ -6,13 +6,21 @@ import User from './models/user';
   providedIn: 'root'
 })
 export class LocalStoreService {
-  ticketId = 4589;
-  userId = 2348;
+  getNextUserId() {
+    const next = JSON.parse(localStorage.getItem('userId')) || 2348;
+    localStorage.setItem('userId', JSON.stringify(next + 1));
+    return next;
+  }
+
+  getNextTicketId() {
+    const next = JSON.parse(localStorage.getItem('ticketId')) || 4949;
+    localStorage.setItem('ticketId', JSON.stringify(next + 1));
+    return next;
+  }
 
   saveTicket(ticket: Ticket): Ticket {
     if (!ticket.id) {
-      ticket.id = '' + this.ticketId;
-      this.ticketId ++;
+      ticket.id = '' + this.getNextTicketId();
     }
     localStorage.setItem('ticket' + ticket.id, JSON.stringify(ticket));
     let tickets: string[] = [...(this.getTicketIdsForUser(ticket.userId) || []), ticket.id];
@@ -30,8 +38,9 @@ export class LocalStoreService {
   }
 
   saveUser(user: User): User {
-    user.id = '' + this.userId;
-    this.userId ++;
+    if (!user.id) {
+      user.id = this.getNextUserId();
+    }
     localStorage.setItem('user' + user.id, JSON.stringify(user));
     return user;
   }
