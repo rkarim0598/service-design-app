@@ -2,7 +2,7 @@
     <div class="col-md-4">
         <app-ticket-list></app-ticket-list>
     </div>
-    <div class="col-md-8">
+    <div *ngIf="ticket; else none" class="col-md-8">
         <div class="row">
             <button type="button" class="btn btn-secondary" (click)="editing = true">Edit</button>&nbsp;
             <button type="button" class="btn btn-secondary" [routerLink]="'/setup'" >Schedule Appointment for User</button>
@@ -10,27 +10,27 @@
         <br>
         <form>
             <div class="form-group row">
-                <label for="device" class="col-sm-2 col-form-label">Device</label>
-                <div class="col-sm-10">
+                <label for="device" class="col-sm-3 col-form-label">Device</label>
+                <div class="col-sm-9">
                     <input type="text" name="device" [readonly]="!editing" class="form-control" [(ngModel)]="device" placeholder="Galaxy Note 12" />
                 </div>
             </div>
             <div class="form-group row">
-                <label for="description" class="col-sm-2 col-form-label">Description</label>
-                <div class="col-sm-10">
-                    <textarea type="text" id="description" [(ngModel)]="description" [readonly]="!editing" class="form-control"></textarea>
+                <label for="description" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                    <textarea type="text" name="description" [(ngModel)]="description" [readonly]="!editing" class="form-control"></textarea>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="previousAttempts" class="col-sm-2 col-form-label">Previous Attempts</label>
-                <div class="col-sm-10">
-                    <textarea type="text" id="previousAttempts" [(ngModel)]="previousAttempts" [readonly]="!editing" class="form-control"></textarea>
+                <label for="previousAttempts" class="col-sm-3 col-form-label">Previous Attempts</label>
+                <div class="col-sm-9">
+                    <textarea type="text" name="previousAttempts" [(ngModel)]="previousAttempts" [readonly]="!editing" class="form-control"></textarea>
                 </div>
             </div>
             <button *ngIf="editing" type="button" class="btn btn-secondary" (click)="editing = false">Save Changes</button>
             <div class="form-group row">
-                <label for="device" class="col-sm-2 col-form-label">Solution</label>
-                <div class="col-sm-10">
+                <label for="device" class="col-sm-3 col-form-label">Solution</label>
+                <div class="col-sm-9">
                     <textarea type="text" id="device" class="form-control"></textarea>
                 </div>
             </div>
@@ -43,4 +43,9 @@
             </p>
         </form>
     </div>
+    <ng-template #none class="col-md-8">
+        <p>
+            No ticket selected.
+        </p>
+    </ng-template>
 </div>

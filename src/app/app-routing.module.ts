@@ -14,12 +14,9 @@ const routes: Routes = [
   { path: 'createrecord', component: CreaterecordComponent },
   { path: 'setup', component: SetupApptComponent },
   { path: 'tickets', component: ViewticketsComponent },
-  { path: 'tickets/:id', component: ViewticketsComponent },
-  { path: 'viewtickets', redirectTo: 'tickets' },
-  { path: 'viewtickets/:id', redirectTo: 'tickets/:id' },
+  { path: 'ticket/:id', component: ViewticketsComponent },
   { path: 'confirmed', component: ConfirmApptComponent },
   { path: 'newticket', component: NewticketComponent },
-  { path: 'newticket/:id', component: NewticketComponent },
 ];
 
 @NgModule({
