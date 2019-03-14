@@ -9,6 +9,7 @@ import { LandingComponent } from './landing/landing.component';
 import { NouserComponent } from './nouser/nouser.component';
 import { CreaterecordComponent } from './createrecord/createrecord.component';
 import { ViewticketsComponent } from './viewtickets/viewtickets.component';
+import { NewticketComponent } from './newticket/newticket.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ViewticketsComponent } from './viewtickets/viewtickets.component';
     LandingComponent,
     NouserComponent,
     CreaterecordComponent,
-    ViewticketsComponent
+    ViewticketsComponent,
+    NewticketComponent
   ],
   imports: [
     BrowserModule,
