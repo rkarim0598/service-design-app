@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../models/ticket';
+import { Ticket, TicketStatus } from '../models/ticket';
 import { LocalStoreService } from '../local-store.service';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewtickets',
@@ -16,7 +16,7 @@ export class ViewticketsComponent implements OnInit {
   previousAttempts: string;
   submitted = false;
 
-  constructor(private route: ActivatedRoute, private localStore: LocalStoreService) { }
+  constructor(private route: ActivatedRoute, private localStore: LocalStoreService, private router: Router) { }
 
   ngOnInit() {
     const ticketId = this.route.snapshot.paramMap.get('id');
@@ -28,9 +28,11 @@ export class ViewticketsComponent implements OnInit {
     this.description = this.ticket.description;
     this.previousAttempts = this.ticket.previousAttempts;
   }
-  submit() {
-    this.submitted = true;
-  }
-  log = (x) => console.log(x);
 
+  close() {
+    this.submitted = true;
+    this.ticket.status = TicketStatus.CLOSED;
+    this.localStore.saveTicket(this.ticket);
+    this.router.navigate([this.router.url, {refresh: (new Date()).getTime()}]);
+  }
 }

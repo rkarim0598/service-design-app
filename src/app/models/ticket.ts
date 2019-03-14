@@ -6,6 +6,7 @@ export class Ticket {
     previousAttempts?: string;
     solution?: string;
     agentId: number;
+    userId: string;
 }
 
 export enum TicketStatus {

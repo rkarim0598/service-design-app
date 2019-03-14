@@ -21,14 +21,15 @@ export class NewticketComponent implements OnInit {
   }
 
   submit() {
-    const id = this.localStore.saveTicket({
+    const ticket =  this.localStore.saveTicket({
       device: this.device,
       description: this.description,
       previousAttempts: this.prevattemp,
       agentId: this.agentid,
-      status: TicketStatus.OPENED
+      status: TicketStatus.OPENED,
+      userId: this.localStore.getCurrentUser().id
     });
-    this.router.navigateByUrl('/ticket/' + id);
+    this.router.navigateByUrl('/ticket/' + ticket.id);
   }
 
 }

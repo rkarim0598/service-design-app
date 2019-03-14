@@ -18,13 +18,13 @@ export class CreaterecordComponent implements OnInit {
   }
 
   submit() {
-    const user = {
+    let user = {
       name: this.name,
       phone: this.phone,
       email: this.email
     };
-    this.localStore.saveUser(user);
+    user = this.localStore.saveUser(user);
     this.localStore.setCurrentUser(user);
-    this.router.navigateByUrl('/viewtickets/');
+    this.router.navigateByUrl('/tickets');
   }
 }
