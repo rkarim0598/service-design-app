@@ -5,13 +5,16 @@ import { NouserComponent } from './nouser/nouser.component';
 import { CreaterecordComponent } from './createrecord/createrecord.component';
 import { ViewticketsComponent } from './viewtickets/viewtickets.component';
 import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
+import { NewticketComponent } from './newticket/newticket.component';
+
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'norecord', component: NouserComponent },
   { path: 'createrecord', component: CreaterecordComponent },
   { path: 'viewtickets', component: ViewticketsComponent },
-  { path: 'confirmed', component: ConfirmApptComponent }
+  { path: 'confirmed', component: ConfirmApptComponent },
+  { path: 'newticket', component: NewticketComponent },
 ];
 
 @NgModule({

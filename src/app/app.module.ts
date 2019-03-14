@@ -10,6 +10,7 @@ import { NouserComponent } from './nouser/nouser.component';
 import { CreaterecordComponent } from './createrecord/createrecord.component';
 import { ViewticketsComponent } from './viewtickets/viewtickets.component';
 import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
+import { NewticketComponent } from './newticket/newticket.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
     NouserComponent,
     CreaterecordComponent,
     ViewticketsComponent,
-    ConfirmApptComponent
+    ConfirmApptComponent,
+    NewticketComponent
   ],
   imports: [
     BrowserModule,
