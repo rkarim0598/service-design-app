@@ -6,7 +6,7 @@
     </ng-template>
     <ng-template ngbPanelContent>
       <div *ngFor="let ticket of open">
-        {{ticket.id}}
+        <a href="/ticket/{{ticket.id}}">{{ticket.id}}</a>
       </div>
     </ng-template>
   </ngb-panel>
@@ -16,7 +16,7 @@
     </ng-template>
     <ng-template ngbPanelContent>
       <div *ngFor="let ticket of closed">
-        {{ticket.id}}
+        <a href="/ticket/{{ticket.id}}">{{ticket.id}}</a>
       </div>
     </ng-template>
   </ngb-panel>

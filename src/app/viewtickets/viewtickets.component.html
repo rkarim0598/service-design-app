@@ -3,9 +3,10 @@
         <app-ticket-list></app-ticket-list>
     </div>
     <div *ngIf="ticket; else none" class="col-md-8">
-        <div class="row">
-            <button type="button" class="btn btn-secondary" (click)="editing = true">Update Information</button>&nbsp;
-            <button type="button" class="btn btn-secondary" [routerLink]="'/setup'" >Schedule Appointment for User</button>
+        <br>
+        <div class = "header">
+        <h4> Ticket Information: </h4>
+        <button type="button" class="btn btn-secondary" (click)="editing = true">Edit</button>&nbsp;
         </div>
         <br>
         <form>
@@ -34,6 +35,13 @@
                     <textarea type="text" name="solution" [(ngModel)]="solution" class="form-control"></textarea>
                 </div>
             </div>
+
+            <div class="row">
+                <button type="button" class="btn btn-secondary" [routerLink]="'/setup'">Schedule Appointment for User</button>
+            </div>
+
+            <br>
+
             <button type="button" (click)="close()" class="btn btn-primary">Mark as Closed</button>
             <!-- <button type="button" class="btn btn-primary" (click)="log(device)"></button> -->
             <p *ngIf="submitted==true; else notYet">
@@ -42,6 +50,7 @@
                 </ngb-alert>
             </p>
         </form>
+
     </div>
     <ng-template #none class="col-md-8">
         <p>
