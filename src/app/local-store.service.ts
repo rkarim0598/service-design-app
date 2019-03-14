@@ -41,12 +41,20 @@ export class LocalStoreService {
     if (!user.id) {
       user.id = this.getNextUserId();
     }
+    const lookup = JSON.parse(localStorage.getItem('userLookup')) || {};
+    lookup[user.phone] = user.id;
+    localStorage.setItem('userLookup', JSON.stringify(lookup));
     localStorage.setItem('user' + user.id, JSON.stringify(user));
     return user;
   }
 
   getUserById(id: string): User {
     return JSON.parse(localStorage.getItem('user' + id));
+  }
+
+  getUserByPhone(phone: string): User {
+    const lookup = JSON.parse(localStorage.getItem('userLookup')) || {};
+    return this.getUserById(lookup[phone]);
   }
 
   getCurrentUser(): User {

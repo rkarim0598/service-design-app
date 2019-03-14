@@ -7,16 +7,17 @@ import { ViewticketsComponent } from './viewtickets/viewtickets.component';
 import { ConfirmApptComponent } from './confirm-appt/confirm-appt.component';
 import { NewticketComponent } from './newticket/newticket.component';
 import { SetupApptComponent } from './setup-appt/setup-appt.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'norecord', component: NouserComponent },
   { path: 'createrecord', component: CreaterecordComponent },
-  { path: 'setup', component: SetupApptComponent },
-  { path: 'tickets', component: ViewticketsComponent },
-  { path: 'ticket/:id', component: ViewticketsComponent },
-  { path: 'confirmed', component: ConfirmApptComponent },
-  { path: 'newticket', component: NewticketComponent },
+  { path: 'setup', component: SetupApptComponent, canActivate: [LoggedInGuard] },
+  { path: 'tickets', component: ViewticketsComponent, canActivate: [LoggedInGuard] },
+  { path: 'ticket/:id', component: ViewticketsComponent, canActivate: [LoggedInGuard] },
+  { path: 'confirmed', component: ConfirmApptComponent, canActivate: [LoggedInGuard] },
+  { path: 'newticket', component: NewticketComponent, canActivate: [LoggedInGuard] },
 ];
 
 @NgModule({

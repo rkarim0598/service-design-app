@@ -15,12 +15,13 @@ export class CreaterecordComponent implements OnInit {
   constructor(private localStore: LocalStoreService, private router: Router) { }
 
   ngOnInit() {
+    this.phone = localStorage.getItem('enteredPhone');
   }
 
   submit() {
     let user = {
       name: this.name,
-      phone: this.phone,
+      phone: this.phone.replace(new RegExp('[-\/. ]', 'g'), ''),
       email: this.email
     };
     user = this.localStore.saveUser(user);
