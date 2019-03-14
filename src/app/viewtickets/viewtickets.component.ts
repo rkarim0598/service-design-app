@@ -14,6 +14,7 @@ export class ViewticketsComponent implements OnInit {
   ticket: Ticket;
   description: string;
   previousAttempts: string;
+  solution: string;
   submitted = false;
 
   constructor(private route: ActivatedRoute, private localStore: LocalStoreService, private router: Router) { }
@@ -27,12 +28,14 @@ export class ViewticketsComponent implements OnInit {
     this.device = this.ticket.device;
     this.description = this.ticket.description;
     this.previousAttempts = this.ticket.previousAttempts;
+    this.solution = this.ticket.solution;
   }
 
   close() {
     this.submitted = true;
     this.ticket.status = TicketStatus.CLOSED;
+    this.ticket.solution = this.solution;
     this.localStore.saveTicket(this.ticket);
-    this.router.navigate([this.router.url, {refresh: (new Date()).getTime()}]);
+    this.router.navigate(['/ticket/' + this.ticket.id, {refresh: (new Date()).getTime()}]);
   }
 }

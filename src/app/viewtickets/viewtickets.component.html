@@ -30,9 +30,9 @@
             </div>
             <button *ngIf="editing" type="button" class="btn btn-secondary" (click)="editing = false">Save Changes</button>
             <div class="form-group row">
-                <label for="device" class="col-sm-3 col-form-label">Solution</label>
+                <label for="solution" class="col-sm-3 col-form-label">Solution</label>
                 <div class="col-sm-9">
-                    <textarea type="text" id="device" class="form-control"></textarea>
+                    <textarea type="text" name="solution" [(ngModel)]="solution" class="form-control"></textarea>
                 </div>
             </div>
 
