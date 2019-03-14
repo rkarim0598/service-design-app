@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-confirm-appt',
@@ -10,6 +11,7 @@ export class ConfirmApptComponent implements OnInit {
   date = localStorage.getItem('date') != 'undefined' ? localStorage.getItem('date') : "Select a date";
   time = localStorage.getItem('time') != 'undefined' ? localStorage.getItem('time') : "Select a time slot!";
   submitted = false;
+  email = JSON.parse(localStorage.getItem('user')).email;
 
   constructor() { }
 
@@ -18,5 +20,9 @@ export class ConfirmApptComponent implements OnInit {
 
   submit() {
     this.submitted = true;
+  }
+
+  lastEmail() {
+    return this.email;
   }
 }

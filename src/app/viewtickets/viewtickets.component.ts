@@ -37,5 +37,6 @@ export class ViewticketsComponent implements OnInit {
     this.ticket.solution = this.solution;
     this.localStore.saveTicket(this.ticket);
     this.router.navigate(['/ticket/' + this.ticket.id, {refresh: (new Date()).getTime()}]);
+    window.location.reload();
   }
 }
