@@ -28,6 +28,7 @@ export class LandingComponent implements OnInit {
       this.localStore.setCurrentUser(user);
       this.router.navigateByUrl('/tickets');
     } else {
+      localStorage.setItem('enteredPhone', this.phone);
       this.router.navigateByUrl('/norecord');
     }
   }

@@ -15,6 +15,7 @@ export class CreaterecordComponent implements OnInit {
   constructor(private localStore: LocalStoreService, private router: Router) { }
 
   ngOnInit() {
+    this.phone = localStorage.getItem('enteredPhone');
   }
 
   submit() {
