@@ -1,4 +1,10 @@
 # ServExpress
+  
+  
+ServExpress is a web application that adds efficiency, speed, and convenience to the customer service experience.   
+Check out the spec of our product in `Serv-Express.pdf`
+
+&nbsp;
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
