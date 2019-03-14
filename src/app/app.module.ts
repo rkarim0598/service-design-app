@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { NouserComponent } from './nouser/nouser.component';
 import { CreaterecordComponent } from './createrecord/createrecord.component';
+import { ViewticketsComponent } from './viewtickets/viewtickets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     NouserComponent,
-    CreaterecordComponent
+    CreaterecordComponent,
+    ViewticketsComponent
   ],
   imports: [
     BrowserModule,
