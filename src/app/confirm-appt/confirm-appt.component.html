@@ -17,7 +17,7 @@
         aria-describedby="inputGroup-sizing-default">
       <button type="button" (click)="submit()" class="btn btn-success lil">Send Confirmation</button>
     </div>
-    <p *ngIf="submitted==true; else notYet">
+    <p *ngIf="submitted==true;">
       <ngb-alert type="success" [dismissible]="false">
         <strong>Success!</strong> The user was sent a confirmation email!
       </ngb-alert>
